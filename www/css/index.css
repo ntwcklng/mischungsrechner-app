@@ -6,24 +6,62 @@ body {
 	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
 	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
 	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-	background-color:#E4E4E4;
-	background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-	background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-	background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-	background-image:-webkit-gradient(
-		linear,
-		left top,
-		left bottom,
-		color-stop(0, #A7A7A7),
-		color-stop(0.51, #E4E4E4)
-	);
+	background-color:#c1c1c1;
 	background-attachment:fixed;
 	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-	font-size:12px;
+	font-size:14px;
 	height:100%;
 	margin:0px;
 	padding:0px;
-	/*text-transform:uppercase;*/
+	text-transform:uppercase;
 	width:100%;
 }
-
+.main {
+	margin: 20px 0;
+	padding: 5px 25px;
+}
+.inputMix-card {
+	float:left;
+}
+.flaschengroesse {
+	clear: both;
+	padding-top: 15px;
+}
+h1 {
+	text-align: center;
+}
+h1 small {
+	color: #44BCFF;
+}
+input {
+	display: inline-block;
+	width: 80%;
+	padding: 5px;
+	margin: 0 auto;
+	font-size: 19px;
+}
+input[type="radio"] {
+		display:none;
+		margin:.6em;
+}
+input[type=radio] + label {
+		display:inline-block;
+		margin:0 .5em .5em 0;
+		padding: .4em .6em;
+		background-color: #e7e7e7;
+		border-color: #ddd;
+		color:#0e0e0e;
+		&:hover {
+			cursor: pointer;
+		}
+}
+input[type=radio]:checked + label { 
+		background-image: none;
+		background-color:#44BCFF;
+		color:#fff;
+}
+@media(max-width: 320px) {
+	body {
+		font-size: 12px;
+	}
+}
