@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<title>Mischungsrechner</title>
+	</head>
+	<body>
+		<div class="main">
+		<div class="logo"><img src="img/glossboss-logo.png" class="logo" alt=""></div>
+		<h1>Mischungsrechner</h1>
+			<div class="inputMix">
+				<div class="inputMix-card">
+					<h4>Teil 1:</h4>
+					<input type="number" id="n1">
+				</div>
+				<div class="inputMix-card">
+					<h4>Teil 2:</h4>
+					<input type="number" id="n2">
+				</div>
+				<div class="flaschengroesse">
+				<h4>Deine Flaschengröße:</h4>
+					<input type="radio" value="100" id="f1" name="flaschengroesse"><label for="f1">100ml</label>
+					<input type="radio" value="200" id="f2" name="flaschengroesse"><label for="f2">200ml</label>
+					<input type="radio" value="250" id="f3" name="flaschengroesse"><label for="f3">250ml</label>
+					<input type="radio" value="500" id="f4" name="flaschengroesse"><label for="f4">500ml</label>
+					<input type="radio" value="750" id="f5" name="flaschengroesse"><label for="f5">750ml</label>
+					<input type="radio" value="1000" id="f6" name="flaschengroesse"><label for="f6">1000ml</label>
+					<input type="radio" value="2000" id="f7" name="flaschengroesse"><label for="f7">2000ml</label>
+				</div>
+			</div>
+
+			<h2 id="output"></h2>
+		</div>
+		<!-- // <script type="text/javascript" src="cordova.js"></script> -->
+		<script type="text/javascript" src="js/index.js"></script>
+		<script>app.initialize();</script>
+	</body>
+</html>
