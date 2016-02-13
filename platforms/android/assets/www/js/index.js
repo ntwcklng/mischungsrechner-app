@@ -20,8 +20,10 @@ var app = {
 			teil1 = $("#n1");
 			teil2 = $("#n2");
 			flaschengroesse = $$(".flaschengroesse input");
+			flaschengroesseInput = $("#n3");
 			inputMix = $$(".inputMix input");
 			updateEventList = ["change", "keyup", "paste", "input", "propertychange"];
+      radioActive = false;
 	},
 	onDeviceReady: function() {
 		console.log("device ready");
@@ -30,20 +32,25 @@ var app = {
 	bindEvents: function() {
 		flaschengroesse.forEach(function(self) {
 			self.addEventListener("change", function(_self) {
+        radioActive = true;
 				app.calculateDilution();
 			}, false);
 		});
-		inputMix.forEach(function(self) {
-			for(event of updateEventList) {
-				self.addEventListener(event, function() {
-					app.calculateDilution();
-				});
-			};
-		});
+    for(event of updateEventList) {
+      inputMix.forEach(function($me) {
+        $me.addEventListener(event, function() {
+          app.calculateDilution();
+        });
+      });
+      flaschengroesseInput.addEventListener(event, function() {
+        radioActive = false;
+        app.calculateDilution();
+      });
+    }
 	},
 	getFlaschenGroesse: function() {
-		var flascheVal = $('input[name="flaschengroesse"]:checked').value;
-		return flascheVal || undefined;
+    if(radioActive) flaschengroesseInput.value = parseInt($('input[name="flaschengroesse"]:checked').value)
+		return flaschengroesseInput.value || undefined;
 	},
 	getMixValue: function(id) {
 		return (id === 1) ? parseInt(teil1.value) : parseInt(teil2.value);
@@ -59,8 +66,9 @@ var app = {
 			var step = flaschengroesse / (teil1Value + teil2Value);
 			var res1 = Math.round(step * teil1Value).toFixed(2).split(".");
 			var res2 = Math.round(step * teil2Value).toFixed(2).split(".");
-			var res = res1[0] + ":" + res2[0];
+			var res = res1[0] + 'ml' + ":" + res2[0] + 'ml';
 			this.updateOutput(res);
+      output.style.display = 'block';
 		}
 	}
 };
