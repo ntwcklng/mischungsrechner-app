@@ -26,7 +26,6 @@ var app = {
       radioActive = false;
 	},
 	onDeviceReady: function() {
-		console.log("device ready");
 		this.bindEvents();
 	},
 	bindEvents: function() {

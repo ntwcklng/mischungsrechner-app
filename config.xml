@@ -7,7 +7,7 @@
     <author email="mmieth+glossboss@gmail.com" href="https://glossboss.de">
         Marvin Mieth
     </author>
-    <content src="index.html" />
+    <content src="www/index.html" />
     <preference name="permissions" value="none" />
     <preference name="orientation" value="default" />
     <preference name="target-device" value="universal" />

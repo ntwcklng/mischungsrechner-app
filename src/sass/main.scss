@@ -21,8 +21,11 @@ body {
   padding: 20px;
   text-align: center;
 }
+.glossboss-heading {
+  color: #44bcff;
+}
 .main {
-	margin: 30px auto;
+	margin: 10px auto;
 	padding: 5px 25px;
 }
 .inputMix {
@@ -32,16 +35,11 @@ body {
 	float:left;
   width: 50%;
 }
-.logo {
-	text-align: center;
-  margin-top: 20px;
-  max-width: 100%;
-}
 .flaschengroesse {
 	clear: both;
 	padding-top: 15px;
 }
-h1 {
+h1, h2 {
 	text-align: center;
 }
 h1 small {
