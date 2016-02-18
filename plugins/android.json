@@ -8,7 +8,7 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "com.phonegap.mischungsrechner"
+            "PACKAGE_NAME": "com.glossboss.mischungsrechner"
         }
     },
     "dependent_plugins": {}
