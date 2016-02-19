@@ -14,6 +14,8 @@ body, html {
 	align-items: center;
 	color: 585858;
 	font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 .appHeading {
   display: block;
@@ -21,7 +23,8 @@ body, html {
   text-align: center;
 }
 .wrapper {
-	width: 80%;
+	width: 95%;
+  padding: 10px;
 	height: 90%;
 	@media(max-width: 320px) {
     width: 100%;
@@ -30,11 +33,23 @@ body, html {
 .inputs {
 	margin: 0 auto;
 	text-align: center;
+  .parts {
+    width: 100px;
+  }
+  .bottle {
+    width: 180px;
+  }
 	input {
-		width: 120px;
+
 		padding: 6px;
 		font-size: 14px;
 		color: #585858;
+    border: none;
+    border-bottom: 1px solid #44bcff;
+    &:focus {
+      outline: none;
+      border: 1px solid #44bcff;
+    }
 	}
 }
 strong {
