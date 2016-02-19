@@ -9,7 +9,42 @@
 		<title>Mischungsrechner</title>
 	</head>
 	<body>
-		<div class="main">
+    <div ng-app="MischungsrechnerApp" class="wrapper">
+    	<div ng-controller="MischungsCtrl" class="content">
+        <h1 class="appHeading">Mischungsrechner</h1>
+    		<p><strong>Dein Mischungsverhältnis:</strong></p>
+    		<div class="inputs">
+    			<input type="number" ng-model="pickedPart1" placeholder="Produkt"/> :
+    			<input type="number" ng-model="pickedPart2" placeholder="Wasser"/>
+    		</div>
+
+    		<div class="picker">
+    			<div ng-click="changeParts(1,2)">1:2</div>
+    			<div ng-click="changeParts(1,4)">1:4</div>
+    			<div ng-click="changeParts(1,10)">1:10</div>
+          <div ng-click="changeParts(1,13)">1:13</div>
+    			<div ng-click="changeParts(1,20)">1:20</div>
+    		</div>
+    		<hr />
+    		<p><strong>Deine Flaschengröße:</strong></p>
+    		<div class="inputs"><input type="number" value="{{pickedBottle}}" ng-model="pickedBottle" placeholder="Flaschengröße"/></div>
+    		<div class="picker">
+    			<div ng-click="changeBottleSize(100)">100ml</div>
+    			<div ng-click="changeBottleSize(250)">250ml</div>
+    			<div ng-click="changeBottleSize(473)">473ml</div>
+    			<div ng-click="changeBottleSize(500)">500ml</div>
+    			<div ng-click="changeBottleSize(1000)">1l</div>
+    			<div ng-click="changeBottleSize(15000)">15l</div>
+    			<div ng-click="changeBottleSize(20000)">20l</div>
+    		</div>
+
+    		<div class="results" ng-show="pickedPart1 >= 1 && pickedPart2 >= 1 && pickedBottle > 0">
+    			<p>Mischungsverhältnis:</p>
+    			<p>{{calculateDilution()}}</p>
+    		</div>
+    	</div>
+    </div>
+		<!-- <div class="main">
     <h1 class="glossboss-heading">Glossboss</h1>
 		<h2>Mischungsrechner</h2>
 			<div class="inputMix">
@@ -35,8 +70,29 @@
 				</div>
 			</div>
 			<h2 id="output" style="display: none">Mischungsverhältnis wählen</h2>
-		</div>
-		<script type="text/javascript" src="js/index.js"></script>
-		<script>app.initialize();</script>
+		</div> -->
+		<script type="text/javascript" src="js/angular.js"></script>
+		<script>
+    angular.module('MischungsrechnerApp', [])
+    .controller('MischungsCtrl', ['$scope', function($scope) {
+    	$scope.changeBottleSize = function(num) {
+    		$scope.pickedBottle = num
+    	}
+    	$scope.changeParts = function(part1, part2) {
+    		$scope.pickedPart1 = part1
+    		$scope.pickedPart2 = part2
+    	}
+    	$scope.calculateDilution = function() {
+    		var p1 = parseInt($scope.pickedPart1)
+    		var p2 = parseInt($scope.pickedPart2)
+    		var bottle = parseInt($scope.pickedBottle)
+    		var result = [
+    			Math.round((bottle/(p1+p2))*p1),
+    			Math.round((bottle/(p1+p2))*p2)
+    		]
+    		return result[0] + 'ml : ' + result[1] + 'ml'
+    	}
+    }])
+    </script>
 	</body>
 </html>
