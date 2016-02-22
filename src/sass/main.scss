@@ -1,171 +1,109 @@
-
 * {
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto);
-body, html {
+
+body,
+html {
   -webkit-touch-callout: none;
   -webkit-text-size-adjust: none;
   -webkit-user-select: none;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: 585858;
-	font-family: 'Roboto', sans-serif;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: 585858;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
 }
+
 .appHeading {
   display: block;
   color: #585858;
   text-align: center;
 }
+
 .wrapper {
-	width: 95%;
+  width: 95%;
   padding: 10px;
-	height: 90%;
-	@media(max-width: 320px) {
+  height: 90%;
+
+  @media(max-width: 320px) {
     width: 100%;
   }
 }
+
 .inputs {
-	margin: 0 auto;
-	text-align: center;
+  margin: 0 auto;
+  text-align: center;
+
   .parts {
     width: 100px;
   }
+
   .bottle {
     width: 180px;
   }
-	input {
 
-		padding: 6px;
-		font-size: 14px;
-		color: #585858;
+  input {
+    padding: 6px;
+    font-size: 14px;
+    color: #585858;
     border: none;
     border-bottom: 1px solid #44bcff;
+
     &:focus {
       outline: none;
       border: 1px solid #44bcff;
     }
-	}
+  }
 }
+
 strong {
-	color: rgba(#44bcff, .9);
-		font-weight: 100;
+  color: rgba(#44bcff, .9);
+  font-weight: 100;
 }
+
 hr {
-	    border: 0;
-    height: 1px;
-    background: rgba(black, .1);
-	margin: 30px 0;
+  border: 0;
+  height: 1px;
+  background: rgba(black, .1);
+  margin: 30px 0;
 }
+
 .results {
-	background: #44bcff;
-	padding: 10px 10px;
-	text-align: center;
-	font-weight: 900;
-	font-size: 18px;
-	color: #585858;
+  background: #44bcff;
+  padding: 10px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 18px;
+  color: #585858;
 }
+
 .picker {
-	margin: 10px auto;
-	text-align: center;
-	div {
-		display: inline-block;
-		background: #f3f3f3;
-		margin: 5px;
-		padding: 6px 13px;
-		color: #585858;
-		text-align: center;
-		cursor: pointer;
-		font-size: 14px;
-		font-weight: light;
-		&:hover {
-			background: HSL(300, 5%, 93%);
-		}
-		&:active {
-			background: #44bcff;
-			color: white;
-		}
-	}
+  margin: 10px auto;
+  text-align: center;
+
+  div {
+    display: inline-block;
+    background: #f3f3f3;
+    margin: 5px;
+    padding: 6px 13px;
+    color: #585858;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: light;
+
+    &:hover {
+      background: HSL(300, 5%, 93%);
+    }
+
+    &:active {
+      background: #44bcff;
+      color: white;
+    }
+  }
 }
-//
-// body {
-// 	-webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-// 	-webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-// 	-webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-// 	background-color:#FAFAFA;
-// 	font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-// 	font-size:16px;
-// 	height:100%;
-// 	margin:0px;
-// 	padding:0px;
-// 	width:100%;
-// 	display: flex;
-//   color: #646464;
-// }
-// #output {
-//   background: #44bcff;
-//   padding: 20px;
-//   text-align: center;
-// }
-// .glossboss-heading {
-//   color: #44bcff;
-// }
-// .main {
-// 	margin: 10px auto;
-// 	padding: 5px 25px;
-// }
-// .inputMix {
-//   width: 100%;
-// }
-// .inputMix-card {
-// 	float:left;
-//   width: 50%;
-// }
-// .flaschengroesse {
-// 	clear: both;
-// 	padding-top: 15px;
-// }
-// h1, h2 {
-// 	text-align: center;
-// }
-// h1 small {
-// 	color: #44BCFF;
-// }
-// input {
-// 	display: inline-block;
-// 	width: 80%;
-// 	padding: 5px;
-// 	margin: 0 auto;
-// 	font-size: 19px;
-//   outline: #44bcff;
-// }
-// input[type="radio"] {
-// 		display:none;
-// 		margin:.6em;
-// }
-// input[type=radio] + label {
-// 		display:inline-block;
-// 		margin:0 .5em .5em 0;
-// 		padding: .4em .6em;
-// 		background-color: #e7e7e7;
-// 		border-color: #ddd;
-// 		color:#646464;
-// 		&:hover {
-// 			cursor: pointer;
-// 		}
-// }
-// input[type=radio]:checked + label {
-// 		background-image: none;
-// 		background-color:#44BCFF;
-// 		color:#fff;
-// }
-// // @media(max-width: 320px) {
-// // 	body {
-// // 		font-size: 12px;
-// // 	}
-// // }
